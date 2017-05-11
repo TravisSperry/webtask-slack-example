@@ -10,13 +10,15 @@ module.exports = (context, req, res) => {
 
   var user = context.data.createdNode
 
+  console.log(`City: ${user.city}, Country ${user.country}`)
+  
   if (user.city && user.country){
-    var loc = `${user.city}, ${user.country}`
+    var location = `${user.city}, ${user.country}`
   }else{
-    var loc = 'somewhere on planet earth.'
+    var location = 'somewhere on planet earth.'
   }
 
-  var text = `A new user signed up from ${loc}`
+  var text = `A new user signed up from ${location}`
 
   request({
     method: 'post',
