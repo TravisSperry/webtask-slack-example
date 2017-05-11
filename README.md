@@ -2,7 +2,7 @@
 
 Patterned after [webtask-mailgun-example](https://github.com/graphcool-examples/webtask-mailgun-email-example)
 
-Send notification emails with Graphcool using [webtask](https://webtask.io/) and [Slack](https://slack.com).
+Send notifications to a Slack Channel with Graphcool using [webtask](https://webtask.io/) and [Slack](https://slack.com).
 
 ## Getting started
 
