@@ -10,8 +10,6 @@ module.exports = (context, req, res) => {
 
   var user = context.data.createdNode
 
-  console.log(`City: ${user.city}, Country ${user.country}`)
-  
   if (user.city && user.country){
     var location = `${user.city}, ${user.country}`
   }else{
@@ -25,5 +23,11 @@ module.exports = (context, req, res) => {
     body: {"text": text},
     json: true,
     url: SLACK_WEBHOOK_URL
+  }).on('error', (err) => {
+    console.log('Error sending notification ' + err.toString())
+    res.end('Error sending notification')
+  }).on('response', (response) => {
+    console.log('Response ' + JSON.stringify(response))
+    res.end()
   })
 }
